@@ -88,4 +88,41 @@ function testKeys() {
     console.log(Array.from(ar_keys))
 }
 
-testKeys()
+// Object 
+
+let me = {
+    name: "Le Minh Tam",
+    age: 18,
+    hoby: "Playing game",
+    learn: ["Js", "Py", "C++", "C#"],
+    score: [8, 9, 10],
+    tinhTB: function () {
+        sum = this.score.reduce((s, n) => s + n) / this.score.length
+        return sum
+    },
+    friend: {
+        cap1: "Huy",
+        cap2: "Trieu",
+        cap3: ["Pho", "Hieu"]
+    }
+} // => console.log(me.name, me.age, me.learn[0], me.tinhTB(), me.friend.cap3[1])
+
+
+// Class
+class xinchao {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+    say() { console.log("Xin chao ", this.name, " o tuoi ", this.age); }
+} // => const sayhello = new xinchao("Minh Tam", 18).say()
+// Ke thua class
+class xinchaokem_noi_o extends xinchao {
+    constructor(name, age, place) {
+        super(name, age)
+        this.place = place
+    }
+    say1() { console.log("Xin chao", this.name, "o tuoi", this.age, this.place) }
+
+}
+new xinchaokem_noi_o("Tam", 18, "Dong Thap").say1()
